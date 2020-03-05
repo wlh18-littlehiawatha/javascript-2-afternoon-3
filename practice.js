@@ -138,7 +138,16 @@ contains(names, 'Colt', function(result){
 */
 
 //Code Here
-
+function uniq(array,cb){
+for(let i = 0; i < array.length; i++){
+  for(let j = i +1; j < array.length; j++){
+    if(array[i] === array[j] ){
+      array.splice(j,1)
+    }
+  }
+}
+return cb(array)
+};
 
 
 // Do not edit the code below.
@@ -184,8 +193,8 @@ each(names, function(item, indice){
 
 function getUserById(array, id, cb){
   for(let i = 0; i < array.length; i++){
-    if(array.users.id === id){
-      cb(array.user[i])
+    if(array[i].id === id){
+      cb(array[i])
 
     }
   }
