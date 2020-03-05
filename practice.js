@@ -28,6 +28,13 @@
 */
 
 // Code Here 
+let first = (arr,cb) => cb(arr[0]) 
+// function first(array, cb){
+//   cb(array[0])
+
+
+// }
+
 
 // Do not edit the code below.
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -49,6 +56,10 @@ first(names, function(firstName){
 
 //Code Here
 
+function last(arr,cb){
+  cb(arr[arr.length-1])
+}
+
 // Do not edit the code below.
 last(names, function(lastName){
   console.log('The last name in names is ' + lastName);
@@ -66,6 +77,8 @@ last(names, function(lastName){
 */
 
 //Code Here
+
+let multiply = (num1, num2, cb) => cb(num1*num2)
 
 // Do not edit the code below.
 multiply(4, 3, function(answer){
@@ -86,6 +99,25 @@ multiply(4, 3, function(answer){
 
 //Code Here 
 
+// let contains = (array, name, cb) => if name...
+
+
+function contains( array, name, cb){
+  for(let i = 0; i < array.length; i++){
+    if(array[i] === name){
+      cb(true)} else {
+        cb(false)
+      }
+    }
+  }
+  
+                                                                      // function visualize(param){
+                                                                      //  if(param === true){
+                                                                      //    console.log('this boolean')
+                                                                      //  } else if(param == false){
+                                                                      //    alert('false')
+                                                                      //  }
+                                                                      // }
 // Do not edit the code below.
 contains(names, 'Colt', function(result){
   if(result === true){
@@ -107,6 +139,8 @@ contains(names, 'Colt', function(result){
 
 //Code Here
 
+
+
 // Do not edit the code below.
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
@@ -124,6 +158,13 @@ uniq(names, function(uniqArr){
 
 //Code Here 
 
+function each(array,cb){
+  for(let i = 0; i < array.length; i++){
+    cb(array[i], i)
+    //console.log(array[i], i)
+  }
+}
+
 // Do not edit the code below.
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
@@ -140,6 +181,15 @@ each(names, function(item, indice){
 */
 
 // Code here
+
+function getUserById(array, id, cb){
+  for(let i = 0; i < array.length; i++){
+    if(array.users.id === id){
+      cb(array.user[i])
+
+    }
+  }
+}
 
 // Do not edit the code below.
 var users = [
